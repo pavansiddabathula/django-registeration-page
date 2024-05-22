@@ -6,7 +6,6 @@ from django.contrib.auth import authenticate, login, logout
 #homefunction 
 def home(request):
     return render(request, "home.html")
-
 #registerfunction
 def register(request):
     if request.method == 'POST':
