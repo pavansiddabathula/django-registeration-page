@@ -1,0 +1,2 @@
+# djangoregister
+about django registeration 
