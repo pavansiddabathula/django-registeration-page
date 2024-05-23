@@ -1,0 +1,99 @@
+>>pip install virtualen
+>>python -m virtualenv (demo)
+>>cd {demo}
+>>cd Scripts
+>>activate
+>>venv/Scripts/activate
+(demo) D:\workspace\django\demo\Scripts>
+for deactivate command  
+>>venv/Scripts/deactivate
+>>django-project>pip install django
+--to create project--
+>>django-admin startproject myproject
+>>cd myproject
+
+--to run django programs --
+python manage.py runserver
+to crete app--
+python manage.py startapp app_name
+files insside mainproject only 
+
+----------------------- Template setting------------------------------------------------------------
+TEMPLATES = [
+    {
+        
+        'DIRS': [os.path.join(BASE_DIR,'templates')], # this is your template folder path.
+        
+    },
+]
+
+
+
+-------------------------------------------------------------------------------------------------------
+
+
+
+-------------------------------static files--------------------------------------------------------------
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static") # this is your static folder
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR,'assets') #this is you assets folder.
+
+---------------------------------------------------------------------------------------------------------
+
+
+
+
+---------------------------------------media-----------------------------------------------------------
+MEDIA_URL ='/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+-----------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+------------------------------configure static and media files to urls-------------------------------
+from django.conf.urls.static import static
+from django.conf import  settings
+
+
+if settings.DEBUG:
+    
+    urlpatterns  += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+-------------------------------------------------------------------------------------------------------
+
+--------------------------------data base--------------------------------------------------------------
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'DB_NAME', # Database name
+        'USER': 'DB_USER',
+        'PASSWORD': 'DB_PASSWORD',
+        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
+    }
+}
+
+
+
+
+
+---------------------------------time zone-------------------------------------------------------------
+TIME_ZONE =  'Asia/Kolkata'
+-------------------------------------------------------------------------------------------------------
+
+python manage.py createsuperuser
+user:
+mail:
+password:
+python manage.py makemigrations
+python manage.py migrate
+python manage.py collectstatic -Django create file to store the static file like assets 
