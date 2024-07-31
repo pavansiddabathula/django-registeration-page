@@ -110,4 +110,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-Feel free to modify this template based on the specific details of your project, such as the exact features, setup steps, or technologies used.
+
